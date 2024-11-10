@@ -9,7 +9,6 @@ app.get('/search/:title', async (req, res) => {
     try {
         const title = req.params.title
         // console.log(title);
-
         const response = await fetch(`https://www.cheapshark.com/api/1.0/games?title=${title}`)
         const data = await response.json()
         //console.log(data[0]);
