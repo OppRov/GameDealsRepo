@@ -6,9 +6,9 @@ app.use(cors())
 const port = 3000
 
 const GameRouter = require('./api/Routers/GameRouter')
-const UserRouter = require('./api/Routers/UserRouter')
+//const UserRouter = require('./api/Routers/UserRouter')
 app.use('/deals', GameRouter)
-app.use('/login', UserRouter)
+//app.use('/users', UserRouter)
 
 
 
