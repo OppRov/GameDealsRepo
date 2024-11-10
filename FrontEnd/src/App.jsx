@@ -10,7 +10,7 @@ function App() {
     {
       path: '/',
       element: <SearchPage />
-    }
+    },
   ]
 
   const router = createBrowserRouter(appRoutes)
