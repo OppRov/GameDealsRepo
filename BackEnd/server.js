@@ -5,18 +5,22 @@ app.use(express.json())
 app.use(cors())
 const port = 3000
 
-app.get('/search/:title', async (req, res) => {
-    try {
-        const title = req.params.title
-        // console.log(title);
-        const response = await fetch(`https://www.cheapshark.com/api/1.0/games?title=${title}`)
-        const data = await response.json()
-        //console.log(data[0]);
-        res.json(data)
-    } catch (error) {
-        res.status(500).json(error)
-    }
-})
+const GameRouter = require('./api/Routers/GameRouter')
+
+//app.use('/', GameRouter)
+
+// app.get('/search/:title', async (req, res) => {
+//     try {
+//         const title = req.params.title
+//         // console.log(title);
+//         const response = await fetch(`https://www.cheapshark.com/api/1.0/games?title=${title}`)
+//         const data = await response.json()
+//         //console.log(data[0]);
+//         res.json(data)
+//     } catch (error) {
+//         res.status(500).json(error)
+//     }
+// })
 
 app.get('/CurrentDeals/:id', async (req, res) => {
     try {
@@ -41,13 +45,6 @@ app.get('/CurrentDeals/:id', async (req, res) => {
         res.status(500).json(error)
     }
 })
-
-
-
-
-
-
-
 
 
 app.listen(port, () => console.log(`App listening on port ${port}!`))

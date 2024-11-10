@@ -1,8 +1,10 @@
 GET https://www.cheapshark.com/api/1.0/games?title=horizon-zero-dawn
-
 ###
 GET http://localhost:3000/search/batman
 ###
-https://www.cheapshark.com/api/1.0/games?id=612
+GET https://www.cheapshark.com/api/1.0/games?id=612
+###
+GET http://localhost:3000/CurrentDeals/612
+
 ###
 GET http://localhost:3000/CurrentDeals/612
