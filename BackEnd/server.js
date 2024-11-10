@@ -42,16 +42,7 @@ app.get('/CurrentDeals/:id', async (req, res) => {
     }
 })
 
-app.get('/', (req, res) => {
-    try {
-        console.log("test");
 
-        res.status(200).send({ test: "test" })
-    } catch (error) {
-        res.status(500).json(error)
-    }
-
-})
 
 
 
