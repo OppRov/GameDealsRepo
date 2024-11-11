@@ -6,10 +6,20 @@ GET https://www.cheapshark.com/api/1.0/games?id=612
 ###
 GET http://localhost:3000/deals/CurrentDeals/612
 
-###
-POST  http://localhost:3000/users/login
+###Register
+POST  http://localhost:3000/users/register
 Content-Type: application/json
 
 {
-    
+    "username": "test",
+    "email": "fakemail@test.com",
+    "password": "password123"
+}
+###Login
+POST http://localhost:3000/users/login
+Content-Type: application/json
+
+{
+    "username": "test",
+    "password": "password123"
 }
