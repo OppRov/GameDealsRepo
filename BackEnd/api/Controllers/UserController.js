@@ -1,6 +1,9 @@
+require('dotenv').config()
+
 const bcrypt = require('bcrypt')
 const mongoose = require('mongoose')
 const User = require('../Models/UserModel')
+const jwt = require('jsonwebtoken')
 
 
 
@@ -16,9 +19,10 @@ exports.login = async (req, res) => {
             return res.status(400).json('Invalid password')
         } else {
             if (user) {
-                const token = jwt.sign({ _id: user._id }, process.env.TOKEN_SECRET)
-                const { password, ...others } = user._doc
-                res.status(200).json({ ...others, token })
+                const accessToken = jwt.sign({ _id: user._id }, process.env.TOKEN_SECRET)
+                // const { password, ...others } = user._doc
+                // res.status(200).json({ ...others, token })
+                res.status(200).json({ accessToken })
             }
         }
     }
